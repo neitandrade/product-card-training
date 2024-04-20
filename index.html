@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="animated">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 2 - Product Card</title>
+    <link rel="stylesheet" href="/product-card-training/assets/style.css">
+    <script src="/product-card-training/assets/style.css"></script>
+</head>
+<body>
+    <div class="page-content">
+        <section id="product-image">
+            <button id="btn-360" onclick="toggle()">
+                <img src="./assets/img/360.svg" alt="Botao para animar o sofá">
+            </button>
+            <button id="btn-close" onclick="toggle()"> <!--Coloca a função do footer-->
+                <img src="./assets/img/close.svg" alt="Botao para desanimar o sófa">
+            </button>
+
+            <img id="sofa-static" src="./assets/img/sofa.png" alt="Sofá estático">
+            <img id="sofa-animated" src="./assets/img/sofa.gif" alt="Sófa animado">
+        </section>
+        <section id="product-details">
+            <span>CÓDIGO: 42404</span>
+            <h1>Sofá Margot II - Rosé</h1>
+            <p>R$ 4.000</p>
+            <button>ADICIONAR À CESTA</button>
+        </section>
+    </div>
+</body>
+<script> //documentElement retorna o elemento raiz do documento, por exemplo 'html' para docs HTML.
+    function toggle(){
+        document.documentElement.classList.toggle
+        ('animated') //Troca o 'animated'... Se tiver, tira, se tirar, coloca.
+    }
+</script>
+</html>

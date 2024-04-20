@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root{
+    --text-color: #271A45;
+}
+
+*{ /* RESETAR O SITE */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #D9CDF7;
+    height: 100vh; /* antes desta propriedade, o body tem a altura dos elementos dentro dele */
+    display: grid; /* O FLEX ALINHA LADO A LADO, O GRID ALINHA TUDO NO CENTRO AO EIXO Y*/
+    place-content: center; /* CENTER EIXO X */
+}
+
+body * {
+    color: var(--text-color);
+    font-family: "Lato", sans-serif;
+}
+
+h1 {
+    font-family: "Crimson Pro", serif;
+}
+
+#btn-close,
+#sofa-animated{
+    display: none;
+}
+
+.page-content{
+    display: flex; /* filhos flexíveis às propriedades */
+    align-items: center;
+    gap: 63px; /* espaço entre as sessões */
+}
+
+#product-image{
+    position: relative; /* PERMITE O BTN SER ABSOLUTO EM RELAÇÃO A ESSA DIV. */
+}
+
+#product-image button{
+    position: absolute;
+    right: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#product-image > img{
+    /* O sinal > funila apenas as tags de primeiro nivel*/
+    height: auto;
+    width: 449px;
+    object-fit: cover; /*COBRIR TODA A CAIXA*/
+}
+
+#product-details span{
+    opacity: 0.8;
+    margin-bottom: 12px;
+    font-size: 12px;
+}
+
+#product-details h1{
+    margin-bottom: 12px;
+    font-size: 32px;
+}
+
+#product-details p{
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+#product-details button{
+    border: 0.5px solid var(--text-color);
+    padding: 8px 16px;
+    background: none;
+    border-radius: 16px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* SEMPRE QUE O HTML RECEBER A CLASSE [.ANIMATED], O sofa-animated PERDE O DISPLAY NONE. */
+/* OU O INVERSO, O SITE PODE INICIAR EM ANIMATED E UMA FUNÇÃO REMOVE ESTA CLASSE DO HTML */
+
+html.animated #btn-360,
+html.animated #sofa-static {
+    display: none;
+}
+
+html.animated #btn-close,
+html.animated #sofa-animated {
+    display: block;
+}
